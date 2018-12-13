@@ -36,6 +36,7 @@ void init_buttons(){
 }
 
 
+//Funciones de salida. Hacen una acción. Devuelven void
 void switch_on(fsm_t* fsm){
     printf("LED ENCENDIDO \n");
     leds_on(LED1);
@@ -46,6 +47,8 @@ void switch_off(fsm_t* fsm){
     leds_off(LED1);
 }
 
+
+//Funciones de lectura de sensores para comprobar el cambio de estado. Devuelven 1 si queremos cambiar, 0 si no
 int read_button_1(fsm_t* fsm){
     printf("boton1 \n");
     if(PORTEbits.RE7 == 0){ //boton izquierda
